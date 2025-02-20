@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Register - AKADEMIA</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("assets/img/dogs/login.jfif");
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card shadow-lg o-hidden border-0">
+        <div class="card-body p-4">
+            <div class="text-center">
+                <h4 class="text-dark mb-4"><b>Crear nueva cuenta</b></h4>
+            </div>
+            <form class="user" id="registerForm">
+                <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombre" name="first_name">
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control form-control-user" type="text" id="exampleLastName" placeholder="Apellidos" name="last_name">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Dirección de Correo" name="email">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Contraseña" name="password">
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Confirmar Contraseña" name="password_repeat">
+                    </div>
+                </div>
+                <button class="btn bg-success d-block btn-primary w-100" type="submit">Registrar cuenta</button>
+            </form>
+            <div class="text-center mt-3">
+                <p style="color: black; font-family:'Times New Roman', Times, serif;"><b>Si posee cuenta</b></p>
+                <a class="small" href="login.html" style="color: rgb(1, 214, 19);">Presione aquí para autenticarse</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/bootstrap/js/valicadion register.js"></script>
+</body>
+
+</html>
