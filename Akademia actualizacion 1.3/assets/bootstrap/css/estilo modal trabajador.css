@@ -1,0 +1,107 @@
+/* Estilos base del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #dac5c5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out; /* Animación de entrada */
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c58383;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close:hover {
+    color: #ff0000; /* Rojo al pasar el mouse */
+}
+
+/* Título del modal */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #c42525;
+    border-bottom: 2px solid #970a0a;
+    padding-bottom: 10px;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    margin-top: 15px;
+}
+
+.modal-body p {
+    font-size: 16px;
+    color: #1d1813;
+    margin: 10px 0;
+}
+
+.modal-body strong {
+    color: #230997;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}

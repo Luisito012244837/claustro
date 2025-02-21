@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Nuevo Trabajador - Akademia</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/estilo insertar.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Barra lateral -->      
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-success p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-text mx-3 text color"><span>AKADEMIA</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Bienvenido</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Trabajadores</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="control.html"><i class="fas fa-user-circle"></i><b><span> Control </span></b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Registrar</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline">
+                    <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <!-- Barra de navegación superior -->
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                        <span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span>
+                                        <img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg">
+                                    </a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Configuración</a>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Registro de actividad</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cerrar sesión</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Formulario de nuevo perfil -->
+                <div class="container-fluid">
+                    <h3  style="color: rgb(27, 22, 22);">Nuevo Trabajador</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-14">
+                            <div class="card shadow mb-3 fade-in">
+                                <div class="card-header py-3">
+                                    <p class="m-0 fw-bold" style="text-align: left;color: black;">Añadir nuevo trabajador</p>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <!-- Campos del formulario -->
+                                        <div class="row">
+                                            <!-- Primera fila de 4 campos -->
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="username" style="color: rgb(27, 22, 22);"><strong>Nombre</strong></label>
+                                                    <input class="form-control" type="text" id="username" 
+                                                           placeholder="Nombre" name="username"
+                                                           pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                           oninput="validarSoloLetras(this)"
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                        Solo se permiten letras (incluyendo acentos y ñ)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="primerApellido" style="color: rgb(27, 22, 22);"><strong>Primer Apellido</strong></label>
+                                                    <input class="form-control" type="text" id="primerApellido" 
+                                                           placeholder="Primer Apellido" name="primerApellido"
+                                                           pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                           oninput="validarSoloLetras(this)"
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                        Solo se permiten letras (incluyendo acentos y ñ)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="segundoApellido" style="color: rgb(27, 22, 22);"><strong>Segundo Apellido</strong></label>
+                                                    <input class="form-control" type="text" id="segundoApellido" 
+                                                           placeholder="Segundo Apellido" name="segundoApellido"
+                                                           pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                           oninput="validarSoloLetras(this)"
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                        Solo se permiten letras (incluyendo acentos y ñ)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="group_count" style="color: rgb(27, 22, 22);"><strong>Cant_Grup_Conferencia</strong></label>
+                                                    <input class="form-control" type="number" id="group_count" placeholder="0" name="group_count" oninput="validarNumeroMenorQue10(this, 'error-message')" required>
+                                                    <small id="error-message" class="text-danger" style="display: none;"></small> <!-- Mensaje de error -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="group_count_practica" style="color: rgb(27, 22, 22);"><strong>Cant_Grup_Clase_Práctica</strong></label>
+                                                    <input class="form-control" type="number" id="group_count_practica" placeholder="0" name="group_count_practica" oninput="validarNumeroMenorQue10(this, 'error-message-practica')" required>
+                                                    <small id="error-message-practica" class="text-danger" style="display: none;"></small> <!-- Mensaje de error -->
+                                                </div>
+                                            </div>
+                                            <!-- Segunda fila de 4 campos -->
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="year_graduated" style="color: rgb(27, 22, 22);"><strong>Año Graduado</strong></label>
+                                                    <input class="form-control" type="number" id="year_graduated" placeholder="1999" name="year_graduated" oninput="validarAñoGraduacion(this)" required>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, ingresa un año válido entre 1900 y el año actual
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="experience_years" style="color: rgb(27, 22, 22);"><strong>Años de experiencia</strong></label>
+                                                    <input class="form-control" type="number" id="experience_years" placeholder="1.2.3..." name="experience_years" oninput="validarExperiencia(this)" required>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, ingresa un valor entre 1 y 100
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="sexo" style="color: rgb(27, 22, 22);">
+                                                        <strong>Sexo</strong>
+                                                    </label>
+                                                    <select class="form-control" id="sexo" name="sexo" required>
+                                                        <option value="" selected disabled hidden>Seleccionar</option> <!-- Placeholder -->
+                                                        <option value="Masculino">Masculino</option>
+                                                        <option value="Femenino">Femenino</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="course" style="color: rgb(27, 22, 22);">
+                                                        <strong>Curso que imparte</strong>
+                                                    </label>
+                                                    <select class="form-control" id="course" name="course" required>
+                                                        <option value="" selected disabled hidden>Seleccionar</option> <!-- Placeholder -->
+                                                        <option value="Máster en ciencias">Curso diurno</option>
+                                                        <option value="Doctor en ciencias">Curso por encuentro</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="category" style="color: rgb(27, 22, 22);">
+                                                        <strong>Categoría Docente</strong></label>
+                                                    <select class="form-control" id="category" name="category">
+                                                        <option value="ATD">ATD</option>
+                                                        <option value="Alumno ayudante">Alumno ayudante</option>
+                                                        <option value="RGA">RGA</option>
+                                                        <option value="Profesor Títular">Profesor Títular</option>
+                                                        <option value="Profesor Auxiliar">Profesor Auxiliar</option>
+                                                        <option value="Instructor">Instructor</option>
+                                                        <option value="A">A</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="career" style="color: rgb(27, 22, 22);">
+                                                        <strong>Carrera</strong>
+                                                    </label>
+                                                    <input class="form-control" type="text" id="career" placeholder="ICI" name="career">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="responsabilidad" style="color: rgb(27, 22, 22);"><strong>Responsabilidad</strong></label>
+                                                    <select class="form-control" id="responsabilidad" name="responsabilidad">
+                                                        <option value="Coordinador">Coordinador</option>
+                                                        <option value="Supervisor">Supervisor</option>
+                                                        <option value="Evaluador">Evaluador</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                       <!-- Áreas y asignaturas -->
+                                       <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="card shadow-sm mb-4"> <!-- Contenedor principal con sombra -->
+                                                <div class="card-header bg-light py-3"> <!-- Encabezado de la tarjeta -->
+                                                    <h6 class="mb-0 toggle-button"  style="color: rgb(27, 22, 22);" onclick="toggleAsignaturas()">
+                                                        <span class="toggle-icon">▼</span> Asignatura:
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body p-3"> <!-- Cuerpo de la tarjeta -->
+                                                    <div id="asignaturaList" class="asignatura-list" style="display: none;"> <!-- Lista oculta por defecto -->
+                                                        <!-- Checkbox "Todos" -->
+                                                        <div style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input" type="checkbox" value="Todas las asignaturas" id="selectAllAsignaturas" onclick="toggleAllAsignaturas(this)">
+                                                            <label class="form-check-label" for="selectAllAsignaturas">Todos</label>
+                                                        </div>
+                                                        <!-- Lista de asignaturas -->
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="1" id="asignatura1">
+                                                            <label class="form-check-label" for="asignatura1">Álgebra</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="2" id="asignatura2">
+                                                            <label class="form-check-label" for="asignatura2">Matemática Discreta</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="3" id="asignatura3">
+                                                            <label class="form-check-label" for="asignatura3">Seguridad Nacional</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="4" id="asignatura4">
+                                                            <label class="form-check-label" for="asignatura4">Filosofía</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="5" id="asignatura5">
+                                                            <label class="form-check-label" for="asignatura5">Historia de Cuba</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="6" id="asignatura6">
+                                                            <label class="form-check-label" for="asignatura6">Cálculo 1</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="7" id="asignatura7">
+                                                            <label class="form-check-label" for="asignatura7">Cálculo 2</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="8" id="asignatura8">
+                                                            <label class="form-check-label" for="asignatura8">Cálculo 3</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="9" id="asignatura9">
+                                                            <label class="form-check-label" for="asignatura9">PID 1</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input asignatura" type="checkbox" value="10" id="asignatura10">
+                                                            <label class="form-check-label" for="asignatura10">PID 2</label>
+                                                        </div>
+                                                        
+                                                        <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="10" id="asignatura10">
+                                                                <label class="form-check-label" for="asignatura10">PID 2</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="11" id="asignatura11">
+                                                                <label class="form-check-label" for="asignatura11">PID 3</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="12" id="asignatura12">
+                                                                <label class="form-check-label" for="asignatura12">PID 4</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="13" id="asignatura13">
+                                                                <label class="form-check-label" for="asignatura13">PID 5</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="14" id="asignatura14">
+                                                                <label class="form-check-label" for="asignatura14">Probabilidad y estadística</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="15" id="asignatura15">
+                                                                <label class="form-check-label" for="asignatura15">Investigación de operaciones</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="16" id="asignatura16">
+                                                                <label class="form-check-label" for="asignatura16">Metodología de la Investigación</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="17" id="asignatura17">
+                                                                <label class="form-check-label" for="asignatura17">Sistema Operativo</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="18" id="asignatura18">
+                                                                <label class="form-check-label" for="asignatura18">Arquitectura de Computadora</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="19" id="asignatura19">
+                                                                <label class="form-check-label" for="asignatura19">Aprendizaje Automático</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="20" id="asignatura20">
+                                                                <label class="form-check-label" for="asignatura20">Inteligencia Artificial</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="21" id="asignatura21">
+                                                                <label class="form-check-label" for="asignatura21">Gestión de proyectos</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="22" id="asignatura22">
+                                                                <label class="form-check-label" for="asignatura22">Fago</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="23" id="asignatura23">
+                                                                <label class="form-check-label" for="asignatura23">Introducción a la programación I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="24" id="asignatura24">
+                                                                <label class="form-check-label" for="asignatura24">Introducción a la programación II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="25" id="asignatura25">
+                                                                <label class="form-check-label" for="asignatura25">Estructura de datos I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="26" id="asignatura26">
+                                                                <label class="form-check-label" for="asignatura26">Estructura de datos II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="27" id="asignatura27">
+                                                                <label class="form-check-label" for="asignatura27">Base de datos I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="28" id="asignatura28">
+                                                                <label class="form-check-label" for="asignatura28">Base de datos II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="29" id="asignatura29">
+                                                                <label class="form-check-label" for="asignatura29">Ingeniería de software I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="30" id="asignatura30">
+                                                                <label class="form-check-label" for="asignatura30">Ingeniería de software II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="31" id="asignatura31">
+                                                                <label class="form-check-label" for="asignatura31">Física</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="32" id="asignatura32">
+                                                                <label class="form-check-label" for="asignatura32">GPN</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="33" id="asignatura33">
+                                                                <label class="form-check-label" for="asignatura33">Teoría Política</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="34" id="asignatura34">
+                                                                <label class="form-check-label" for="asignatura34">Introducción a las ciencias Informáticas I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="35" id="asignatura35">
+                                                                <label class="form-check-label" for="asignatura35">Introducción a las ciencias Informáticas II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="36" id="asignatura36">
+                                                                <label class="form-check-label" for="asignatura36">Redes I</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="37" id="asignatura37">
+                                                                <label class="form-check-label" for="asignatura37">Redes II</label>
+                                                            </div>
+                                                            <div class="form-check mb-2">
+                                                                <input class="form-check-input asignatura" type="checkbox" value="38" id="asignatura38">
+                                                                <label class="form-check-label" for="asignatura38">Página Web</label>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Agrega más asignaturas según sea necesario -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card shadow-sm mb-4">
+                                                <div class="card-header bg-light py-3">
+                                                    <h6 class="mb-0 toggle-button" style="color: rgb(27, 22, 22);" onclick="toggleAreas()">
+                                                        <span class="toggle-icon-areas">▼</span> Área:
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body p-3">
+                                                    <div id="areaList" class="area-list" style="display: none;">
+                                                        <!-- Checkbox "Todos" -->
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input" type="checkbox" id="selectAllAreas" onclick="toggleAllAreas(this)">
+                                                            <label class="form-check-label" for="selectAllAreas">Todos</label>
+                                                        </div>
+                                                        <!-- Checkboxes de áreas -->
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input area" type="checkbox" value="Investigación" id="areaInvestigacion">
+                                                            <label class="form-check-label" for="areaInvestigacion">Investigación</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input area" type="checkbox" value="Docencia" id="areaDocencia">
+                                                            <label class="form-check-label" for="areaDocencia">Docencia</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input area" type="checkbox" value="Extensión" id="areaExtension">
+                                                            <label class="form-check-label" for="areaExtension">Extensión</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input area" type="checkbox" value="Administrativa" id="areaAdministrativa">
+                                                            <label class="form-check-label" for="areaAdministrativa">Administrativa</label>
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                                                            <input class="form-check-input area" type="checkbox" value="Técnica" id="areaTecnica">
+                                                            <label class="form-check-label" for="areaTecnica">Técnica</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                        <!-- Botón de guardar -->
+                                        <div class="text-center mb-3">
+                                            <button class="btn btn-primary btn-sm" type="submit">Guardar cambios</button>
+                                            <button class="btn btn-secondary btn-sm" type="reset">Limpiar formulario</button>
+                                            <button class="btn btn-danger btn-sm" type="button" onclick="window.location.href='index.html'">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pie de página -->
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © UCI 2025</span></div>
+                </div>
+            </footer>
+        </div>
+       <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+     <!-- Scripts -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/bootstrap/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ </body>
+</html>
