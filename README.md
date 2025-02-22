@@ -1,1 +1,1 @@
-Plantilla de trabajo actual 21/02/2025 10.54 am
+Plantilla de trabajo actual con django  22/02/2025 12.27 pm
