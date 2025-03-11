@@ -1,0 +1,98 @@
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    
+}
+
+.container {
+    max-width: 1060px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+/* css para selccion de asigantura*/
+
+body {
+
+    font-family: Arial, sans-serif;
+
+}
+
+.toggle-button {
+
+    cursor: pointer;
+
+    color: #404244; /* Color azul */
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.toggle-button:hover {
+
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+
+}
+
+.toggle-icon {
+
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+
+    transition: transform 0.3s; /* Transición suave para la rotación */
+
+}
+
+#asignaturaList {
+
+    display: none; /* Ocultar por defecto */
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
+    margin-top: 5px;
+
+    max-height: 200px; /* Altura máxima */
+
+    overflow-y: auto; /* Scroll si es necesario */
+
+    border-radius: 5px; /* Bordes redondeados */
+
+    background-color: #f9f9f9; /* Color de fondo */
+
+}
