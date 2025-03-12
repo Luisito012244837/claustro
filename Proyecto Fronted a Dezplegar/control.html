@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tabla de Trabajadores</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/estilo a la pagina Principal.css">
+
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilo para el contenedor de la tabla */
+        .table-responsive {
+            max-height: 400px; /* Altura máxima para el scroll */
+            overflow-y: auto; /* Habilita el scroll vertical */
+            position: relative;
+        }
+
+        /* Ajusta la tabla para que ocupe el 100% */
+        table {
+            width: 100%;
+        }
+
+        .table thead th {
+            position: sticky; /* Fija el encabezado */
+            top: 0; /* Alinea el encabezado en la parte superior */
+            z-index: 10; /* Asegura que el encabezado esté por encima del contenido */
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-success p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="index.html">
+                    <div class="sidebar-brand-text mx-3"><span style="color: #fff;">AKADEMIA</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Bienvenido</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="control.html"><i class="fas fa-user-circle"></i> Control </span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <!-- Barra de navegación superior -->
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input id="searchInput" class="bg-light form-control border-0 small" type="text" placeholder="Buscar por nombre o apellido...">
+                            </div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                        <span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">Alertas</h6>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div>
+                                                <span class="small text-gray-500">12 de Diciembre, 2023</span>
+                                                <p>¡Un nuevo informe mensual está listo para descargar!</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="">
+                                        <span id="usernameDisplay" class="d-none d-lg-inline me-2 text-gray-600 small">Autenticarse</span>
+                                    </a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item logout-button" href="login.html"><i class="fas fa-sign-in-alt fa-sm fa-fw me-2 text-gray-400"></i><span> Login</span></a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item logout-button" href="#" id="logoutButton">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cerrar Sesión
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container-fluid">
+                    <div class="card shadow">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h1 class="m-0">Control de trabajadores</h1>
+                            <div class="d-flex align-items-center">
+                                <a href="profile.html" class="text-primary ms-3" title="Nuevo Trabajador">
+                                    <i class="fas fa-plus-circle fa-2x"></i>
+                                </a>
+                                <!-- Botón Exportar Excel -->
+                                <button id="exportExcel" class="btn btn-success ms-3">Exportar Excel</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Primer Apellido</th>
+                                            <th>Segundo Apellido</th>
+                                            <th>Cantidad Conferencia</th>
+                                            <th>Cantidad Clase Práctica</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Datos de ejemplo -->
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> <!-- Fin de table-responsive -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="bg-white">
+                <div class="text-center my-auto copyright"><span>Copyright © UCI 2025</span></div>
+            </footer>
+        </div>
+        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+
+    <!-- Modal para ver detalles -->
+    <div id="modalDetalles" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalles del Trabajador</h2>
+            <p id="detallesNombre"><strong>Nombre:</strong> <span></span></p>
+            <p id="detallesAsignatura"><strong>Asignatura:</strong> <span></span></p>
+            <p id="detallesGrupos"><strong>Cant-Grupos:</strong> <span></span></p>
+            <p id="detallesCarrera"><strong>Carrera:</strong> <span></span></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/mostrar datos.js"></script>
+    <script src="assets/js/autenticado user.js"></script>
+
+    <script>
+        // Funcionalidad para el campo de búsqueda
+        const searchInput = document.getElementById('searchInput'); // Selecciona el campo de búsqueda
+        const dataTable = document.getElementById('dataTable'); // Selecciona la tabla
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase().trim(); // Obtiene el valor del campo de búsqueda y lo convierte a minúsculas
+            const rows = dataTable.getElementsByTagName('tr'); // Obtiene todas las filas de la tabla
+
+            // Divide el filtro en palabras
+            const filterWords = filter.split(' ').filter(word => word.length > 0); // Filtra palabras vacías
+
+            // Itera sobre las filas de la tabla
+            for (let i = 1; i < rows.length; i++) { // Comienza desde 1 para omitir el encabezado
+                const cells = rows[i].getElementsByTagName('td'); // Obtiene todas las celdas de la fila
+                let rowVisible = true; // Variable para determinar si la fila debe ser visible
+
+                // Verifica solo en las celdas de nombre y apellidos
+                const nombre = cells[0].textContent.toLowerCase(); // Nombre
+                const primerApellido = cells[1].textContent.toLowerCase(); // Primer apellido
+                const segundoApellido = cells[2].textContent.toLowerCase(); // Segundo apellido
+
+                // Verifica si cada palabra del filtro coincide con el nombre o apellidos
+                for (const word of filterWords) {
+                    if (!nombre.includes(word) && !primerApellido.includes(word) && !segundoApellido.includes(word)) {
+                        rowVisible = false; // Si alguna palabra no coincide, marca la fila como no visible
+                        break; // Sale del bucle si se encuentra una palabra que no coincide
+                    }
+                }
+
+                // Muestra u oculta la fila según la coincidencia
+                rows[i].style.display = rowVisible ? '' : 'none';
+            }
+        });
+
+
+
+        // Función para exportar a Excel
+        document.getElementById('exportExcel').addEventListener('click', function() {
+            fetch('http://10.10.1.1:8000/apiv2/exportTrabajadores/') // Reemplaza con la URL de tu API
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error de respuesta ');
+                    }
+                    return response.blob(); // Obtiene la respuesta como un blob
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob); // Crea una URL para el blob
+                    const a = document.createElement('a'); // Crea un elemento <a>
+                    a.style.display = 'none'; // Oculta el elemento
+                    a.href = url; // Asigna la URL al elemento
+                    a.download = ' Excel de trabajadores Akademia.xlsx'; // Nombre del archivo a descargar
+                    document.body.appendChild(a); // Añade el elemento al DOM
+                    a.click(); // Simula un clic para descargar el archivo
+                    window.URL.revokeObjectURL(url); // Libera la URL
+                })
+                .catch(error => {
+                    console.error('Error al exportar:', error); // Manejo de errores
+                });
+        });
+    </script>
+</body>
+
+</html>
