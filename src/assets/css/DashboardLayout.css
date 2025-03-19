@@ -1,0 +1,25 @@
+.sidebar.collapsed {
+    width: 60px; /* Ancho de la barra lateral colapsada */
+    background-color: transparent; /* Fondo transparente cuando está colapsada */
+    padding: 0; /* Elimina el padding para que se ajuste al ancho */
+  }
+  
+  .sidebar.collapsed .sidebar-brand-text {
+    display: none; /* Oculta el texto del nombre de la marca */
+  }
+  
+  .sidebar.collapsed .sidebar-text {
+    display: none; /* Oculta el texto de los enlaces */
+  }
+  
+  .sidebar.collapsed .nav-link {
+    justify-content: center; /* Centra los íconos cuando la barra está colapsada */
+  }
+  
+  .navbar {
+    transition: width 0.3s ease, background-color 0.3s ease; /* Transición suave para el cambio de ancho y color de fondo */
+  }
+  .sidebar.collapsed {
+    transform: translateX(-13px); /* Desplaza la barra lateral completamente hacia la izquierda */
+  }
+  

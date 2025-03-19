@@ -1,0 +1,139 @@
+/* Control.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Tamaño de fuente base más grande */
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 250px; /* Ajuste para la barra lateral */
+    padding: 40px; /* Más padding */
+}
+
+/* Tarjetas */
+.card {
+    border: none;
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Más espacio entre tarjetas */
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #ecf4eb;
+    color: #0b0a0a;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0; /* Bordes más redondeados */
+    padding: 25px; /* Más padding */
+    font-size: 1.5rem; /* Más grande */
+}
+
+.card-body {
+    padding: 30px; /* Más padding */
+    font-size: 1.25rem; /* Más grande */
+}
+
+/* Tabla de trabajadores */
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table-bordered {
+    border-radius: 20px; /* Bordes más redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+}
+
+.table-bordered th,
+.table-bordered td {
+    padding: 15px; /* Más padding */
+    text-align: center;
+}
+
+.table-bordered th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table-bordered tbody tr:hover {
+    background-color: #f1f1f1; /* Color de hover para las filas */
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 10px 20px; /* Más padding */
+    font-size: 1.1rem; /* Más grande */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #16a085; /* Color más oscuro al hacer hover */
+}
+
+.btn-success {
+    background-color: #4e73df;
+    border: none;
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 10px 20px; /* Más padding */
+    font-size: 1.1rem; /* Más grande */
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #224abe; /* Color más oscuro al hacer hover */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.25rem; /* Más grande */
+}
+ .custom-modal {
+                            max-height: 80vh; /* Limitar la altura máxima del modal */
+                            overflow-y: auto; /* Permitir el desplazamiento vertical */
+                        }
+
+                        .card {
+                            border: 1px solid #e0e0e0;
+                            border-radius: 8px;
+                            margin: 5px 0; /* Reducir el margen */
+                            padding: 10px; /* Reducir el padding */
+                            background-color: #fff;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .card-header {
+                            border-bottom: 1px solid #e0e0e0;
+                            margin-bottom: 5px; /* Reducir el margen */
+                        }
+
+                        .card-header h3 {
+                            margin: 0;
+                            font-size: 1.1em; /* Reducir el tamaño de la fuente */
+                            color: #333;
+                        }
+
+                        .card-body p {
+                            margin: 3px 0; /* Reducir el margen */
+                            color: #555;
+                        }
