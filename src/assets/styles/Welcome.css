@@ -1,0 +1,80 @@
+/* Estilos para el contenedor principal */
+.welcome-container {
+    padding: 20px;
+    background-color: #f0f8ff; /* Fondo claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  /* Estilos para el mensaje de bienvenida */
+  .welcome-message {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .welcome-message p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Estilos para el contenedor de estadísticas */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-template-rows: repeat(2, auto); /* Dos filas */
+    gap: 20px;
+  }
+  
+  /* Estilos para cada tarjeta de estadística */
+  .stat-card {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px); /* Efecto de levitación al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+  }
+  
+  .stat-card h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #1E90FF; /* Azul */
+  }
+  
+  .stat-card p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Animación para las tarjetas */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .stat-card:nth-child(1),
+  .stat-card:nth-child(2) {
+    animation: float 4s ease-in-out infinite; /* Animación para las tarjetas de arriba */
+  }
+  
+  .stat-card:nth-child(3),
+  .stat-card:nth-child(4) {
+    animation: float 4s ease-in-out infinite 1s; /* Animación para las tarjetas de abajo con retraso */
+  }
