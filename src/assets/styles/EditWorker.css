@@ -1,0 +1,95 @@
+/* Estilos para el contenedor principal */
+.add-worker-container {
+    padding: 20px;
+    background-color: #f0f8ff; /* Fondo claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.add-worker-container h2 {
+    text-align: center;
+    color: #ff7b00; /* Naranja */
+    margin-bottom: 20px;
+}
+
+/* Estilos para las filas del formulario */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #ff7b00; /* Naranja al enfocar */
+    outline: none;
+}
+
+/* Estilos para los botones de acción */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-button {
+    background-color: #ff7b00; /* Naranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #ffdd1e; /* Amarillo al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de levitación */
+}
+
+.cancel-button {
+    background-color: #ccc; /* Gris */
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #bbb; /* Gris más claro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de levitación */
+}
