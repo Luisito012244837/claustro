@@ -340,7 +340,7 @@ select option {
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/funcionrelleno.js"></script>
-    <script>
+   <script>
         // Inicializar Select2 con checkboxes
         $(document).ready(function () {
             // Configurar Select2 para todos los campos múltiples
@@ -357,6 +357,9 @@ select option {
                 maximumSelectionLength: 1,
             });
     
+            // Inicialmente deshabilitar solo responsabilidades (los cargos siempre estarán habilitados)
+            $('#responsabilidad').prop('disabled', true);
+    
             // Escuchar cambios en el área seleccionada
             $('#areaList').on('change', function() {
                 const selectedAreas = $(this).val();
@@ -367,17 +370,13 @@ select option {
                     facultades.includes(area)
                 );
     
-                // Habilitar/deshabilitar responsabilidades y cargos según corresponda
+                // Habilitar/deshabilitar solo responsabilidades según corresponda
                 if (hayFacultadesSeleccionadas) {
                     $('#responsabilidad').prop('disabled', false);
-                    $('#cargo').prop('disabled', false);
                     $('#responsabilidad').val(null).trigger('change');
-                    $('#cargo').val(null).trigger('change');
                 } else {
                     $('#responsabilidad').prop('disabled', true);
-                    $('#cargo').prop('disabled', true);
                     $('#responsabilidad').val(null).trigger('change');
-                    $('#cargo').val(null).trigger('change');
                 }
             });
         });
@@ -385,7 +384,6 @@ select option {
         // Función para obtener la lista de facultades (deberías implementar esta función según tus datos)
         function obtenerFacultades() {
             // Esto es un ejemplo - debes reemplazarlo con tu lógica real
-            // Podrías obtener esta lista de tu backend o definirla aquí
             return ['Facultad de Ciencias', 'Facultad de Ingeniería', 'Facultad de Medicina'];
         }
     
@@ -435,7 +433,7 @@ select option {
                 return;
             }
     
-            // Validar responsabilidades y cargos si se seleccionó facultad
+            // Validar responsabilidades solo si se seleccionó facultad
             const facultades = obtenerFacultades();
             const hayFacultadesSeleccionadas = areas && areas.some(area => 
                 facultades.includes(area)
@@ -450,15 +448,16 @@ select option {
                     });
                     return;
                 }
-                
-                if (!cargo || cargo.length === 0) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'Por favor, selecciona al menos un cargo para las facultades seleccionadas.',
-                    });
-                    return;
-                }
+            }
+    
+            // Los cargos siempre son obligatorios (siempre están habilitados)
+            if (!cargo || cargo.length === 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, selecciona al menos un cargo.',
+                });
+                return;
             }
     
             // Datos para enviar a la API
@@ -478,8 +477,7 @@ select option {
                 nombre_carrera: Array.isArray(carrera) ? carrera : [carrera],
                 nombre_responsabilidad: hayFacultadesSeleccionadas ? 
                     (Array.isArray(responsabilidad) ? responsabilidad : [responsabilidad]) : [],
-                nombre_cargo: hayFacultadesSeleccionadas ? 
-                    (Array.isArray(cargo) ? cargo : [cargo]) : [],
+                nombre_cargo: Array.isArray(cargo) ? cargo : [cargo], // Cargos siempre se envían
                 nombre_asignatura: Array.isArray(asignaturas) ? asignaturas : [asignaturas],
                 nombre_area: Array.isArray(areas) ? areas : [areas],
             };
@@ -520,7 +518,7 @@ select option {
             }
         });
     
-        // Funciones para poblar años (se mantienen igual)
+        // Resto del código se mantiene igual...
         document.addEventListener('DOMContentLoaded', function() {
             populateYearGraduated();
             populateExperienceYears();
