@@ -1,0 +1,216 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Fondo claro para el cuerpo */
+}
+
+/* Estilos para el NavBar */
+.navbar {
+  background: linear-gradient(135deg, #ff7b00, #ffdd1e); /* Gradiente naranja */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 28px; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  background: linear-gradient(45deg, #810000, #9da800); /* Gradiente en el texto */
+  background-clip: text; /* Aplicar gradiente al texto */
+  -webkit-text-fill-color: transparent; /* Hacer el texto transparente */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  transition: text-shadow 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.navbar h1:hover {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Sombra más intensa al pasar el mouse */
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.navbar button {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #ff7b00; /* Texto naranja */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar button:hover {
+  background: linear-gradient(135deg, #ff7b00, #ffdd1e); /* Gradiente naranja */
+  color: white; /* Texto blanco al pasar el mouse */
+}
+
+.navbar .notification-icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar .notification-icon:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+/* Estilos para el SideBar */
+.sidebar {
+  width: 150px; /* Ancho cuando está expandido */
+  background: linear-gradient(135deg, #ff7b00, #ffdd1e); /* Gradiente naranja */
+  padding: 20px;
+  height: 100vh; /* Altura completa de la ventana */
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease; /* Animación fluida */
+  position: relative; /* Para posicionar el botón de contraer */
+}
+
+.sidebar.collapsed {
+  width: 50px; /* Ancho cuando está contraído */
+}
+
+/* Botón para contraer/expandir */
+.collapse-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 190px; /* Mueve el botón más arriba */
+  left: 50%; /* Centra el botón horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centrado */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 10px; /* Añade un poco de padding */
+  border-radius: 50%; /* Bordes redondeados */
+}
+
+.collapse-button:hover {
+  transform: scale(1.1) translateX(-50%); /* Efecto de escala al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el mouse */
+}
+
+/* Estilos para la lista */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px; /* Espacio para el botón de contraer */
+}
+
+.sidebar ul li {
+  margin-bottom: 20px; /* Más espacio entre elementos */
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al pasar el mouse */
+  transform: translateX(10px); /* Desplazamiento hacia la derecha */
+}
+
+/* Estilos para los íconos */
+.icon {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  font-size: 20px; /* Tamaño del ícono */
+}
+
+/* Cuando está contraído, ocultar el texto */
+.sidebar.collapsed ul li a span {
+  display: none;
+}
+
+/* Ajustar íconos cuando está contraído */
+.sidebar.collapsed ul li a {
+  justify-content: center; /* Centrar íconos */
+}
+
+.auth-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.notification-icon {
+  margin-right: 10px; /* Espacio entre el ícono y el botón */
+  position: relative; /* Necesario para posicionar el mensaje de notificación */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+
+.notification-message {
+  position: absolute;
+  top: 30px; /* Ajusta la distancia desde el ícono */
+  right: 0; /* Alinea a la derecha del ícono */
+  background-color: #f8d7da; /* Fondo de la notificación */
+  color: #721c24; /* Color del texto */
+  border: 1px solid #f5c6cb; /* Borde de la notificación */
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Asegúrate de que la notificación esté por encima de otros elementos */
+  transition: opacity 0.3s ease; /* Transición suave */
+  width: max-content; /* Ajusta el ancho del mensaje */
+}
+
+/* Estilos para los elementos del menú de autenticación */
+.auth-menu-item {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #ff7b00; /* Texto naranja */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; /* Espacio entre elementos */
+}
+
+.auth-menu-item:hover {
+  background: linear-gradient(135deg, #ff7b00, #ffdd1e); /* Gradiente naranja */
+  color: white; /* Texto blanco al pasar el mouse */
+}
+
+/* Estilos específicos para el enlace "Iniciar Sesión" */
+.auth-menu-item.link {
+  color: #ff7b00; /* Color naranja para el texto */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.auth-menu-item.link:hover {
+  color: white; /* Texto blanco al pasar el mouse */
+}
+.clock-container {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde el fondo */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.clock-icon {
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+    color: #ff7b00; /* Color del ícono */
+}
