@@ -1,95 +1,156 @@
 /* Estilos para el contenedor principal */
 .add-worker-container {
-    padding: 20px;
-    background-color: #f0f8ff; /* Fondo claro */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin: 20px auto;
-  }
-  
-  .add-worker-container h2 {
-    text-align: center;
-    color: #ff7b00; /* Naranja */
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos para las filas del formulario */
-  .form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-  
-  /* Estilos para los grupos de formulario */
-  .form-group {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .form-group:last-child {
-    margin-right: 0;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 14px;
-  }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus {
-    border-color: #ff7b00; /* Naranja al enfocar */
-    outline: none;
-  }
-  
-  /* Estilos para los botones de acción */
-  .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  .submit-button {
-    background-color: #ff7b00; /* Naranja */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #ffdd1e; /* Amarillo al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de levitación */
-  }
-  
-  .cancel-button {
-    background-color: #ccc; /* Gris */
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .cancel-button:hover {
-    background-color: #bbb; /* Gris más claro al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de levitación */
-  }
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.add-worker-container h2 {
+  text-align: center;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las filas del formulario */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #ff7b00;
+  outline: none;
+}
+
+/* Estilos mejorados para los botones de acción */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  gap: 15px; /* Espacio entre botones */
+}
+
+.submit-button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.submit-button:hover {
+  background-color: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.exit-button {
+  background-color: #ff7700; /* Naranja más oscuro */
+  margin-right: auto; /* Separa los grupos de botones */
+}
+
+.exit-button:hover {
+  background-color: #ffaa33;
+}
+
+.cancel-button {
+  background-color: #e40808;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cancel-button:hover {
+  background-color: #ff6659;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Grupo de botones de guardado */
+.save-buttons {
+  display: flex;
+  gap: 15px; /* Espacio entre botones de guardado */
+  margin-right: auto; /* Empuja los botones de guardado a la izquierda */
+}
+
+/* Estilos para SweetAlert2 compacto */
+.small-swal-container {
+  font-size: 0.9rem;
+}
+
+.small-swal-popup {
+  width: 350px !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+}
+
+.small-swal-title {
+  font-size: 1.2rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.small-swal-content {
+  font-size: 0.9rem !important;
+  padding: 0 1rem !important;
+}
+
+.small-swal-confirm-button {
+  background-color: #3085d6 !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.5rem !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+}
+
+.small-swal-cancel-button {
+  background-color: #d33 !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.5rem !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+}

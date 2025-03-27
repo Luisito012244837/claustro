@@ -13,6 +13,9 @@ const EditPassword = () => {
         confirmPassword: ''
     });
     const [errors, setErrors] = useState({});
+    const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -122,42 +125,70 @@ const EditPassword = () => {
                         />
                         {errors.username && <span className="error-message">{errors.username}</span>}
                     </div>
-                    <div className="form-group">
+                    
+                    <div className="form-group password-group">
                         <label htmlFor="currentPassword">Contraseña Actual</label>
                         <input 
-                            type="password" 
+                            type={showCurrentPassword ? "text" : "password"} 
                             id="currentPassword" 
                             name="currentPassword" 
                             value={formData.currentPassword}
                             onChange={handleChange}
                             required 
                         />
+                        <button
+                            type="button"
+                            className="show-password-icon"
+                            onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                            aria-label={showCurrentPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                        >
+                            {showCurrentPassword ? '👁️' : '👁️‍🗨️'}
+                        </button>
                         {errors.currentPassword && <span className="error-message">{errors.currentPassword}</span>}
                     </div>
-                    <div className="form-group">
+                    
+                    <div className="form-group password-group">
                         <label htmlFor="newPassword">Nueva Contraseña</label>
                         <input 
-                            type="password" 
+                            type={showNewPassword ? "text" : "password"} 
                             id="newPassword" 
                             name="newPassword" 
                             value={formData.newPassword}
                             onChange={handleChange}
                             required 
                         />
+                        <button
+                            type="button"
+                            className="show-password-icon"
+                            onClick={() => setShowNewPassword(!showNewPassword)}
+                            aria-label={showNewPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                        >
+                            {showNewPassword ? '👁️' : '👁️‍🗨️'}
+                        </button>
                         {errors.newPassword && <span className="error-message">{errors.newPassword}</span>}
                     </div>
-                    <div className="form-group">
+                    
+                    <div className="form-group password-group">
                         <label htmlFor="confirmPassword">Confirmar Nueva Contraseña</label>
                         <input 
-                            type="password" 
+                            type={showConfirmPassword ? "text" : "password"} 
                             id="confirmPassword" 
                             name="confirmPassword" 
                             value={formData.confirmPassword}
                             onChange={handleChange}
                             required 
                         />
+                        <button
+                            type="button"
+                            className="show-password-icon"
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                            aria-label={showConfirmPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                        >
+                            {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
+                        </button>
                         {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
                     </div>
+                    
                     <button type="submit">Cambiar Contraseña</button>
                 </form>
             </div>
