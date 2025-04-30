@@ -1,0 +1,97 @@
+/* Variables para el tema claro (por defecto) */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --label-color: #555;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --btn-bg: #6366f1;
+    --btn-hover-bg: #4f46e5;
+    --mensaje-color: green;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Variables para el tema oscuro */
+[data-theme="dark"] {
+    --bg-color: #2a2a3a;
+    --text-color: #e6e6e6;
+    --label-color: #bbbbbb;
+    --input-bg: #3a3a4a;
+    --input-border: #555;
+    --btn-bg: #4f46e5;
+    --btn-hover-bg: #3b3bb5;
+    --mensaje-color: lightgreen;
+    --box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos base */
+.asignatura-create-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.asignatura-create-container h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.asignatura-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--label-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-submit {
+    padding: 10px 15px;
+    background-color: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+.mensaje {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--mensaje-color);
+}
