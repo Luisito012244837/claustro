@@ -1,0 +1,110 @@
+.especialistas-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.especialistas-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #38bba5 !important;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilos para el campo de búsqueda */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  width: 300px;
+  transition: var(--transition);
+}
+
+.search-icon {
+  color: #64e2cd;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+
+.especialistas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.especialistas-table th,
+.especialistas-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.especialistas-table th {
+  background-color: #2c3e50;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.especialistas-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.especialistas-table td {
+  font-size: 14px;
+  color: #333;
+}
+
+.especialistas-table td:last-child {
+  text-align: center;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 16px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.icon-button:hover {
+  color: #2c3e50;
+}
+
+.icon-button .fa-eye {
+  color: #3498db;
+}
+
+.icon-button .fa-trash {
+  color: #e74c3c;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  padding: 20px;
+}
