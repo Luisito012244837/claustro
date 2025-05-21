@@ -1,0 +1,250 @@
+/* Variables para el tema claro (por defecto) */
+:root {
+    --bg-color: #f7feff;
+    --text-color: #333;
+    --label-color: #555;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --btn-bg: #6366f1;
+    --btn-hover-bg: #4f46e5;
+    --mensaje-color: green;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --container-width: 1000px;
+    --input-height: 45px; /* Nueva variable para controlar la altura de los inputs */
+}
+
+/* Variables para el tema oscuro */
+[data-theme="dark"] {
+    --bg-color: #302f2f;
+    --text-color: #e6e6e6;
+    --label-color: #bbbbbb;
+    --input-bg: #3a3a4a;
+    --input-border: #555;
+    --btn-bg: #4f46e5;
+    --btn-hover-bg: #3b3bb5;
+    --mensaje-color: lightgreen;
+    --box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos base */
+.asignatura-create-container {
+    max-width: var(--container-width);
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.asignatura-create-container h1 {
+    text-align: center;
+    color: #31af9a;
+    margin-bottom: 25px; /* Reducido de 30px a 25px */
+    font-size: 1.8rem; /* Reducido de 2rem a 1.8rem */
+}
+
+.asignatura-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reducido de 25px a 20px */
+}
+
+/* Diseño de dos columnas para pantallas grandes */
+@media (min-width: 1000px) { /* Cambiado de 1200px a 1000px para activar antes el diseño de dos columnas */
+    .asignatura-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 25px; /* Reducido de 30px a 25px */
+    }
+    
+    .form-group-full {
+        grid-column: span 2;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 5px; /* Añadido margen inferior más pequeño */
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Reducido de 10px a 5px */
+    color: var(--label-color);
+    font-size: 0.9rem; /* Reducido de 1rem a 0.9rem */
+}
+
+/* Estilos para inputs y selects */
+.form-group input,
+.form-group select {
+    padding: 8px 12px; /* Reducido de 14px a 8px 12px */
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 14px; /* Reducido de 16px a 14px */
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    height: var(--input-height); /* Altura fija para inputs */
+}
+
+.form-group textarea {
+    padding: 8px 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    resize: vertical;
+    min-height: 80px; /* Reducido de 120px a 80px */
+    max-height: 200px; /* Reducido de 250px a 200px */
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+    padding-right: 40px;
+}
+
+.btn-submit {
+    padding: 12px 18px; /* Reducido de 14px 20px a 12px 18px */
+    background-color: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem; /* Reducido ligeramente */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 15px 0 15px 80%; /* Reducido de 20px a 15px */
+    display: block;
+    width: fit-content;
+    min-width: 150px; /* Reducido de 180px a 150px */
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: var(--btn-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.mensaje {
+    text-align: center;
+    margin: 20px 0 10px; /* Reducido de 25px 0 15px a 20px 0 10px */
+    font-size: 0.95rem; /* Reducido de 1rem a 0.95rem */
+    color: var(--mensaje-color);
+}
+
+/* Contenedor con scroll - Modificado para reducir la necesidad de scroll */
+.form-scroll-container {
+    max-height: 85vh; /* Aumentado de 75vh a 85vh */
+    overflow-y: auto;
+    padding-right: 15px; /* Reducido de 20px a 15px */
+}
+
+/* Estilo para la barra de scroll */
+.form-scroll-container::-webkit-scrollbar {
+    width: 8px; /* Reducido de 12px a 8px */
+}
+
+.form-scroll-container::-webkit-scrollbar-track {
+    background: var(--input-bg);
+    border-radius: 8px;
+}
+
+.form-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--btn-bg);
+    border-radius: 8px;
+}
+
+.form-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--btn-hover-bg);
+}
+
+.error-message {
+    color: #f7feff;
+    text-align: center;
+    margin: 15px 0; /* Reducido de 20px a 15px */
+    font-size: 0.95rem; /* Reducido de 1rem a 0.95rem */
+    font-weight: 500;
+}
+
+/* Estilos para el estado de carga */
+.loading-container {
+    text-align: center;
+    padding: 30px; /* Reducido de 40px a 30px */
+}
+
+.loading-container progress {
+    width: 100%;
+    height: 12px; /* Reducido de 15px a 12px */
+    margin-top: 15px; /* Reducido de 20px a 15px */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.loading-container progress::-webkit-progress-bar {
+    background-color: var(--input-bg);
+    border-radius: 8px;
+}
+
+.loading-container progress::-webkit-progress-value {
+    background-color: var(--btn-bg);
+    border-radius: 8px;
+    transition: width 0.5s ease;
+}
+
+/* Responsive design */
+@media (max-width: 1100px) {
+    :root {
+        --container-width: 95%;
+    }
+}
+
+@media (max-width: 900px) {
+    .asignatura-create-container {
+        padding: 20px; /* Reducido de 25px a 20px */
+    }
+    
+    .asignatura-form {
+        gap: 15px; /* Reducido de 20px a 15px */
+    }
+}
+
+@media (max-width: 680px) {
+    .asignatura-create-container {
+        padding: 15px; /* Reducido de 20px a 15px */
+        margin: 15px auto; /* Reducido de 20px a 15px */
+    }
+    
+    .asignatura-create-container h1 {
+        font-size: 1.5rem; /* Reducido de 1.7rem a 1.5rem */
+        margin-bottom: 15px; /* Reducido de 20px a 15px */
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px; /* Reducido de 12px a 8px 10px */
+    }
+    
+    .btn-submit {
+        padding: 10px 15px; /* Reducido de 12px 20px a 10px 15px */
+        font-size: 0.9rem; /* Reducido de 1rem a 0.9rem */
+        min-width: 130px; /* Reducido aún más para móviles */
+    }
+}
