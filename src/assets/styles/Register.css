@@ -1,0 +1,225 @@
+/* Variables CSS */
+:root {
+  --primary-color: #1387da;
+  --secondary-color: #00bac7;
+  --background-color: #f0f8ff;
+  --container-bg: #ffffff;
+  --text-color: #333333;
+  --input-bg: #ffffff;
+  --input-border: #cccccc;
+  --input-text: #333333;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* Variables para modo oscuro */
+.dark-theme {
+  --primary-color: #1387da;
+  --secondary-color: #00bac7;
+  --background-color: #6c6c72;
+  --container-bg: #6c6c72;
+  --text-color: #f0f0f0;
+  --input-bg: #6c6c72;
+  --input-border: #555555;
+  --input-text: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos generales */
+body {
+  background-color: var(--background-color);
+  transition: var(--transition);
+}
+
+/* Contenedor principal */
+.register-container {
+  padding: 20px;
+  background-color: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+  margin: 20px auto;
+  text-align: center;
+  transition: var(--transition);
+  overflow-x: hidden; /* Oculta cualquier contenido que exceda horizontalmente */
+}
+
+.register-container.dark-theme {
+  background-color: var(--container-bg);
+}
+
+/* Título "Agregar Trabajador" */
+.register-container h1 {
+  font-size: 28px;
+  color: #3fc4ae !important;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background: #3fc4ae;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.register-container h1:hover {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Formulario */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* Asegura que el formulario no exceda el ancho del contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Fila para Nombre y Apellido */
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas si es necesario */
+  width: 100%; /* Asegura que no exceda el ancho del contenedor */
+}
+
+/* Grupos de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  transition: var(--transition);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(255, 123, 0, 0.5);
+  outline: none;
+}
+
+/* Placeholders */
+::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.dark-theme ::placeholder {
+  color: #b0b0b0;
+}
+
+/* Botón de registrar */
+.register-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 10px auto;
+  height: 40px;
+  width: 130px;
+  display: block;
+}
+
+.register-button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-container {
+    margin-left: auto;
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Contenedor del encabezado */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.header-title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+
+.right-align-button {
+  margin-left: auto;
+  z-index: 1;
+}
+
+/* Botones de acción */
+.button-group {
+  display: flex;
+  gap: 15px; /* Espaciado entre los botones */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  margin-top: 10px; /* Opcional: agrega un poco de espacio superior */
+}
+
+.create-asignatura-button {
+  background-color: #38bba5; /* Color verde */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-asignatura-button:hover {
+  background-color: #2c9a85; /* Color verde más oscuro */
+}
+
+.control-especialistas-button {
+  background-color: #ff6b6b; /* Color rojo */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-especialistas-button:hover {
+  background-color: #e63946; /* Color rojo más oscuro */
+}
+
+.create-asignatura-icon,
+.control-especialistas-icon {
+  color: #fff;
+  font-size: 18px;
+}
